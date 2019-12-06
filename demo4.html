@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>自行车手</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width:130px;
+				height: 130px;
+				margin:200px auto 0;
+				background: url(img4/bike.png) no-repeat;
+				animation:run .6s steps(32) infinite;
+			}
+			@keyframes run{
+				from{
+					background-position:0px 0px;
+				}
+				to{
+					background-position:0px -4160px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

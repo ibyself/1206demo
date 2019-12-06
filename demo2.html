@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>立体照片墙</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style:none;
+			}
+			.list{
+				width:150px;
+				height:150px;
+				margin:200px auto 50px;
+				position:relative;
+				transform-style:preserve-3d;
+				perspective:1700px;
+			}
+			.list li{
+				position:absolute;
+				left:0;
+				top:0;
+			}
+			.list li img{
+				width: 150px;
+				height: 150px;
+			}
+			div{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list" id="list">
+			<li><img src="img2/img11.jpg" alt=""></li>
+			<li><img src="img2/img12.jpg" alt=""></li>
+			<li><img src="img2/img13.jpg" alt=""></li>
+			<li><img src="img2/img14.jpg" alt=""></li>
+			<li><img src="img2/img15.jpg" alt=""></li>
+			<li><img src="img2/img16.jpg" alt=""></li>
+			<li><img src="img2/img17.jpg" alt=""></li>
+			<li><img src="img2/img18.jpg" alt=""></li>
+			<li><img src="img2/img19.jpg" alt=""></li>
+			<li><img src="img2/img20.jpg" alt=""></li>
+			<li><img src="img2/img21.jpg" alt=""></li>
+		</ul>
+		<div><button class="btn" id="btn">旋转</button></div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementById('btn');
+				var lis=document.querySelectorAll('#list li');
+				for (var i = 0; i < lis.length; i++) {
+					lis[i].style.transform='rotateY('+360/lis.length*i+'deg) translateZ(400px)';
+				}
+				var num=0;
+				btn.onclick=function(){
+					num++;
+					for (var i = 0; i < lis.length; i++) {
+						lis[i].style.transition='1s';
+						lis[i].style.transform='rotateY('+((360/lis.length*i)+(360/lis.length)*num)+'deg) translateZ(400px)';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

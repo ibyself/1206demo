@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>星星.心心</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1,.box2{
+				width:100px;
+				height: 100px;
+				margin:100px auto 0;
+			}
+			.box1{
+				background: url(img5/star-sprite.png) no-repeat;
+			}
+			.box2{
+				background: url(img5/heart-sprite.png) no-repeat;
+			}
+			.box1:hover,.box2:hover{
+				animation:star .5s steps(29) infinite;
+			}
+			@keyframes star{
+				from{
+					background-position:0px 0px;
+				}
+				to{
+					background-position:-2900px 0px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+	</body>
+</html>
